@@ -1,10 +1,6 @@
 
 # coding: utf-8
 
-
-
-
-
 import numpy as np
 import pandas as pd
 from gensim.test.utils import common_texts
@@ -57,6 +53,7 @@ import seaborn as sns
 from ast import literal_eval
 import imblearn
 from imblearn.over_sampling import RandomOverSampler # doctest: +NORMALIZE_WHITESPACE
+import collections
 
 
 
@@ -124,8 +121,6 @@ for user in Log_Users:
 
 
 
-
-
 Logs_with_Task_ID_info = Logs_with_Task_ID[['user_id', 'task_id', 'app_id', 'Label_complete47']].copy()
 #User_info[User_info['user_id'].isin(Logs_with_Task_ID_info['user_id'].unique())].groupby('gender').size()
 #User_info[User_info['user_id'].isin(Logs_with_Task_ID_info['user_id'].unique())].groupby('age_range_min').size()
@@ -136,15 +131,6 @@ Logs_with_Task_ID_info = Logs_with_Task_ID[['user_id', 'task_id', 'app_id', 'Lab
 
 
 all_apps = Logs['mobile_app_category'].unique()
-all_apps
-
-
-
-
-
-import collections
-
-
 
 
 
@@ -157,7 +143,6 @@ age_35 = collections.defaultdict(list)
 age_55 = collections.defaultdict(list)
 
 for app in all_apps:
-#app = all_apps[0]
   selected_df = Logs[Logs['mobile_app_category'] == app].copy()
   app_user = selected_df['user_id'].unique()
   app_user = User_info[User_info['user_id'].isin(app_user)]
