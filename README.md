@@ -1,5 +1,5 @@
-# CIKM2022
-For sharing the data and code of work submitted to CIKM2022.
+# KDD2023
+For sharing the data and code of work submitted to KDD2023.
 
 1. Two Data File:
 
